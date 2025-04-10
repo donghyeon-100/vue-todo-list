@@ -20,6 +20,7 @@ export default defineConfig({
         // 외부(Glitch) 서버로 target 변경
 
         target: 'https://kb6-12-server.glitch.me',
+
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
