@@ -3,12 +3,15 @@ import { reactive, computed } from 'vue';
 import axios from 'axios';
 
 export const useTodoListStore = defineStore('todoList', () => {
-  const baseURL = import.meta.env.DEV
-    ? '/api'
-    : 'https://kb6-12-server.glitch.me';
+  // 로컬 서버 환경에서는 /api 사용
+  // 외부 서버 환경에서는 glitch 서버 사용
+  // const baseURL = import.meta.env.DEV
+  //   ? '/api'
+  //   : 'https://kb6-12-server.glitch.me';
 
-  const BASEURI = `${baseURL}/todos`;
+  // const BASEURI = `${baseURL}/todos`;
 
+  const BASEURI = '/api/todos';
   const states = reactive({
     todoList: [],
     isLoading: false,

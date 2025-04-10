@@ -15,11 +15,11 @@ export default defineConfig({
     proxy: {
       '/api': {
         // 로컬 서버
-        // target: 'http://localhost:3000',
+        target: 'http://localhost:3000',
 
         // 외부(Glitch) 서버로 target 변경
 
-        target: 'https://kb6-12-server.glitch.me',
+        // target: 'https://kb6-12-server.glitch.me',
 
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
