@@ -5,7 +5,7 @@ import axios from 'axios';
 export const useTodoListStore = defineStore('todoList', () => {
   const baseURL = import.meta.env.DEV
     ? '/api'
-    : 'https://your-glitch-app.glitch.me';
+    : 'https://kb6-12-server.glitch.me/todos';
 
   const BASEURI = `${baseURL}/todos`;
 
