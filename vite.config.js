@@ -12,15 +12,17 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  // render 서버 설정 사용
-  // server: {
-  //   // 서버 프록시 설정
-  //   proxy: {
-  //     '/api': {
-  //       target: 'http://localhost:3000',
-  //       changeOrigin: true,
-  //       rewrite: (path) => path.replace(/^\/api/, ''),
-  //     },
-  //   },
-  // },
+  server: {
+    // 서버 프록시 설정
+    proxy: {
+      '/api': {
+        // 로컬 서버
+        // target: 'http://localhost:3000',
+        // 외부(Glitch) 서버
+        target: 'https://kb6-12-server.glitch.me',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 });
