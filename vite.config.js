@@ -1,10 +1,8 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueDevTools from 'vite-plugin-vue-devtools';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
   resolve: {
@@ -18,7 +16,9 @@ export default defineConfig({
       '/api': {
         // 로컬 서버
         // target: 'http://localhost:3000',
-        // 외부(Glitch) 서버
+
+        // 외부(Glitch) 서버로 target 변경
+
         target: 'https://kb6-12-server.glitch.me',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
